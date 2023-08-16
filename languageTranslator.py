@@ -1,23 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-# Python Program that helps translate Speech to Text and vice-versa
-
-
-# In[2]:
-
-
 import speech_recognition
 import pyttsx3
 import voices
 from googletrans import Translator
-
-
-# In[3]:
-
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -25,17 +9,9 @@ for voice in voices:
     print(f"Voice: {voice.name}")
     print(f"Voice: {voice.id}")
 
-
-# In[4]:
-
-
 # The Recognizer is initialized.
 engine = pyttsx3.init()
 UserVoiceRecognizer = speech_recognition.Recognizer()
-
-
-# In[5]:
-
 
 def getLanguage(argument):
     switcher = {
@@ -48,10 +24,6 @@ def getLanguage(argument):
     }
     return switcher.get(argument, 0)
 
-
-# In[6]:
-
-
 def get_Language(argument):
     switcher = {
         0: "en",
@@ -62,10 +34,6 @@ def get_Language(argument):
         1: "de"
     }
     return switcher.get(argument, "en")
-
-
-# In[7]:
-
 
 def getSelection():
     while True:
@@ -81,15 +49,7 @@ def getSelection():
             return userInput
             break
 
-
-# In[8]:
-
-
 translator = Translator()
-
-
-# In[ ]:
-
 
 while 1:
     try:
@@ -145,10 +105,3 @@ while 1:
 
     except speech_recognition.UnknownValueError:
         print("No User Voice detected OR unintelligible noises detected OR the recognized audio cannot be matched to text !!! \n CAN YOU PLEASE DO IT AGAIN")
-
-
-# In[ ]:
-
-
-
-
